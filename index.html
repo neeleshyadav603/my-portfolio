@@ -101,7 +101,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,51,102,0.8), rgba(0,51,102,0.8)), url('https://via.placeholder.com/1920x800') no-repeat center center;
+            background: linear-gradient(rgba(0,51,102,0.8), rgba(0,51,102,0.8)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2070') no-repeat center center;
             background-size: cover;
             color: var(--text-light);
             padding: 100px 0;
@@ -203,6 +203,7 @@
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: var(--transition);
+            cursor: pointer; /* Makes it clear the card is clickable */
         }
 
         .project-card:hover {
@@ -218,6 +219,8 @@
             justify-content: center;
             color: white;
             font-size: 1.5rem;
+            text-align: center;
+            padding: 10px;
         }
 
         .project-content {
@@ -386,7 +389,6 @@
 </head>
 <body>
 
-    <!-- Header -->
     <header>
         <div class="container">
             <nav>
@@ -404,7 +406,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <img src="WhatsApp Image 2025-10-05 at 21.45.30_be2fb8de.jpg" alt="Neelesh Kumar">
@@ -414,13 +415,12 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Hello! I'm Neelesh Kumar, an aspiring AI/ML Engineer and Data Scientist currently pursuing my MCA at Amity University, Haryana. I hold a B.Sc. in Mathematics from CSJM Kanpur University, which has given me a strong analytical foundation.</p>
+                    <p>Hello! I'm Neelesh Kumar, an aspiring AI/ML Engineer and Data Scientist currently pursuing my MCA at Amity University, Haryana. I hold a B.Sc. in Mathematics and Physics from CSJM Kanpur University, which has given me a strong analytical foundation.</p>
                     <p>I am passionate about building intelligent systems that solve real-world problems. My expertise spans data analytics, predictive modeling, and developing end-to-end machine learning pipelines using Python, SQL, Scikit-learn, and TensorFlow. I also have a keen interest in Quantum Machine Learning and have explored hybrid classical-quantum models using Qiskit.</p>
                     <p>When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and staying updated with the latest trends in AI and data science.</p>
                 </div>
@@ -428,7 +428,6 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" style="background-color: #f8f9fa;">
         <div class="container">
             <h2>My Skills</h2>
@@ -461,54 +460,62 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
             <h2>Featured Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">Netflix Recommendation Analysis</div>
-                    <div class="project-content">
-                        <h3>Netflix Recommendation Analysis</h3>
-                        <p>Analyzed the Netflix Prize dataset to understand user viewing patterns and implemented collaborative and content-based filtering algorithms.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Pandas</span>
-                            <span class="tech-tag">Scikit-learn</span>
-                            <span class="tech-tag">Flask</span>
+                
+                <a href="https://github.com/neeleshyadav603/Netflix-Data_Analysis" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                    <div class="project-card">
+                        <div class="project-img">Netflix Recommendation Analysis</div>
+                        <div class="project-content">
+                            <h3>Netflix Recommendation Analysis</h3>
+                            <p>Analyzed the Netflix Prize dataset to understand user viewing patterns and implemented collaborative and content-based filtering algorithms.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Scikit-learn</span>
+                                <span class="tech-tag">Flask</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">Quantum Predict</div>
-                    <div class="project-content">
-                        <h3>Quantum Predict - AI Meets Quantum Intelligence</h3>
-                        <p>Constructed a novel hybrid classical-quantum pipeline leveraging Quantum Support Vector Machines (QSVM) and Quantum Neural Networks (QNN).</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Qiskit</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">QSVM</span>
-                            <span class="tech-tag">VQE</span>
+                </a>
+
+                <a href="https://github.com/neeleshyadav603/Quantum-Finance-Predictor" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                    <div class="project-card">
+                        <div class="project-img">Quantum Predict</div>
+                        <div class="project-content">
+                            <h3>Quantum Predict - AI Meets Quantum Intelligence</h3>
+                            <p>Constructed a novel hybrid classical-quantum pipeline leveraging Quantum Classifiers and Regressors with real-time sentiment analysis.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Qiskit</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">FastAPI</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">NAVI - Voice Assistant</div>
-                    <div class="project-content">
-                        <h3>NAVI - Voice-Powered AI Assistant</h3>
-                        <p>Developed a conversational AI assistant capable of understanding and responding to voice commands using NLP and speech recognition libraries.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">NLP</span>
-                            <span class="tech-tag">Speech Recognition</span>
+                </a>
+
+                <a href="https://github.com/neeleshyadav603" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="View my other projects on GitHub!">
+                    <div class="project-card">
+                        <div class="project-img">NAVI - Voice Assistant</div>
+                        <div class="project-content">
+                            <h3>NAVI - Voice-Powered AI Assistant</h3>
+                            <p>Developed a conversational AI assistant capable of understanding and responding to voice commands using NLP and speech recognition libraries.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">NLP</span>
+                                <span class="tech-tag">Speech Recognition</span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
+
             </div>
         </div>
     </section>
 
-    <!-- Experience & Education Section -->
     <section id="experience" style="background-color: #f8f9fa;">
         <div class="container">
             <h2>Education & Experience</h2>
@@ -522,23 +529,22 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>MCA</h3>
+                        <h3>MCA in Computer Science</h3>
                         <p class="timeline-date">2024–2026 | Amity University, Haryana</p>
-                        <p>Pursuing Master of Computer Applications with a focus on Artificial Intelligence and Data Science.</p>
+                        <p>Pursuing a Master of Computer Applications with a focus on Artificial Intelligence and Data Science.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>B.Sc. in Mathematics</h3>
+                        <h3>B.Sc. in Mathematics & Physics</h3>
                         <p class="timeline-date">2021–2024 | CSJM Kanpur University</p>
-                        <p>Strong foundation in mathematical concepts essential for data science and machine learning.</p>
+                        <p>Graduated with a strong foundation in mathematical and physical concepts essential for data science and machine learning.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <h2>Get In Touch</h2>
@@ -583,7 +589,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Neelesh Kumar. All Rights Reserved.</p>
