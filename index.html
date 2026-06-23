@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Neelesh Kumar | Quantum Computing & AI Researcher</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Neelesh Kumar | Quantum Machine Learning Researcher</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/montserrat@latest/latin-400-normal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/montserrat@latest/latin-500-normal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/montserrat@latest/latin-600-normal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/montserrat@latest/latin-700-normal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/lato@latest/latin-300-normal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/lato@latest/latin-400-normal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/lato@latest/latin-500-normal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #003366;
             --secondary: #F0F0F0;
             --accent: #008080;
+            --accent-dark: #006666;
             --text-dark: #333333;
             --text-light: #FFFFFF;
             --transition: all 0.3s ease;
@@ -93,29 +100,34 @@
             border-radius: 5px;
             font-weight: 500;
             transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
         }
 
         .btn:hover {
-            background-color: #006666;
+            background-color: var(--accent-dark);
             transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,51,102,0.8), rgba(0,51,102,0.8)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2070') no-repeat center center;
+            background: linear-gradient(rgba(0,51,102,0.88), rgba(0,51,102,0.88)), url('hero-bg.jpg') no-repeat center center;
             background-size: cover;
             color: var(--text-light);
             padding: 100px 0;
             text-align: center;
         }
 
-        .hero img {
+        .hero img.profile-pic {
             width: 200px;
             height: 200px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--accent);
             margin-bottom: 20px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
         }
 
         .hero h1 {
@@ -123,10 +135,42 @@
             margin-bottom: 10px;
         }
 
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
         .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
+            font-size: 1.15rem;
+            max-width: 800px;
             margin: 0 auto 30px;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .hero-links a {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            padding: 8px 14px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .hero-links a:hover {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-3px);
         }
 
         /* Section Styles */
@@ -141,18 +185,17 @@
             color: var(--primary);
         }
 
-        .section-title {
-            color: var(--accent);
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .section-subtitle {
+            text-align: center;
+            max-width: 800px;
+            margin: -20px auto 40px;
+            color: #666;
         }
 
         /* About Section */
         .about-content {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 40px;
             flex-wrap: wrap;
         }
@@ -164,21 +207,52 @@
 
         .about-text p {
             margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .about-highlights {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .about-highlights h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 8px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            gap: 12px;
+        }
+
+        .highlight-item i {
+            color: var(--accent);
+            margin-top: 4px;
+            min-width: 20px;
         }
 
         /* Skills Section */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
 
         .skill-card {
             background-color: white;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: var(--transition);
+            border-top: 3px solid var(--accent);
         }
 
         .skill-card:hover {
@@ -188,7 +262,13 @@
 
         .skill-card h3 {
             color: var(--primary);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-size: 1.15rem;
+        }
+
+        .skill-card h3 i {
+            color: var(--accent);
+            margin-right: 8px;
         }
 
         .skill-list {
@@ -197,8 +277,9 @@
         }
 
         .skill-list li {
-            padding: 5px 0;
+            padding: 6px 0;
             border-bottom: 1px dashed #eee;
+            font-size: 0.95rem;
         }
 
         .skill-list li:last-child {
@@ -208,7 +289,7 @@
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
@@ -230,16 +311,22 @@
         }
 
         .project-img {
-            height: 200px;
+            height: 180px;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             text-align: center;
-            padding: 10px;
+            padding: 15px;
             font-weight: 600;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .project-img i {
+            font-size: 2.5rem;
         }
 
         .project-content {
@@ -249,6 +336,23 @@
         .project-content h3 {
             color: var(--primary);
             margin-bottom: 10px;
+        }
+
+        .project-period {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .project-content ul {
+            margin: 10px 0;
+            padding-left: 20px;
+            font-size: 0.92rem;
+        }
+
+        .project-content ul li {
+            margin-bottom: 6px;
         }
 
         .project-tech {
@@ -261,9 +365,9 @@
         .tech-tag {
             background-color: var(--accent);
             color: white;
-            padding: 3px 8px;
+            padding: 3px 10px;
             border-radius: 3px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
         }
 
         /* Publications Section */
@@ -274,7 +378,7 @@
 
         .publication-item {
             background-color: white;
-            padding: 20px;
+            padding: 22px;
             border-radius: 8px;
             margin-bottom: 20px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -284,6 +388,7 @@
         .publication-item h4 {
             color: var(--primary);
             margin-bottom: 8px;
+            font-size: 1.1rem;
         }
 
         .publication-meta {
@@ -292,11 +397,16 @@
             margin-bottom: 10px;
         }
 
+        .publication-meta i {
+            color: var(--accent);
+            margin-right: 5px;
+        }
+
         .publication-status {
             display: inline-block;
-            padding: 3px 10px;
+            padding: 3px 12px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 500;
             margin-bottom: 10px;
         }
@@ -309,6 +419,18 @@
         .status-accepted {
             background-color: var(--accent);
             color: white;
+        }
+
+        .status-reviewer {
+            background-color: #6f42c1;
+            color: white;
+        }
+
+        .publication-authors {
+            font-size: 0.9rem;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 8px;
         }
 
         /* Education & Experience */
@@ -343,9 +465,26 @@
             left: 0;
         }
 
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: var(--accent);
+            border: 3px solid white;
+            border-radius: 50%;
+            top: 30px;
+            right: -8px;
+            box-shadow: 0 0 0 3px var(--accent);
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -8px;
+        }
+
         .timeline-content {
             background-color: white;
-            padding: 20px;
+            padding: 22px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
@@ -353,12 +492,13 @@
         .timeline-content h3 {
             color: var(--primary);
             margin-bottom: 5px;
+            font-size: 1.15rem;
         }
 
         .timeline-date {
             color: var(--accent);
             font-weight: 500;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-size: 0.9rem;
         }
 
@@ -368,30 +508,82 @@
             margin-bottom: 10px;
         }
 
+        .timeline-location i {
+            color: var(--accent);
+            margin-right: 5px;
+        }
+
+        .timeline-content ul {
+            padding-left: 20px;
+            font-size: 0.93rem;
+        }
+
+        .timeline-content ul li {
+            margin-bottom: 5px;
+        }
+
+        .timeline-content p {
+            font-size: 0.93rem;
+        }
+
         /* Certifications Section */
         .cert-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
 
         .cert-card {
             background-color: white;
-            padding: 20px;
+            padding: 22px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             border-left: 4px solid var(--accent);
+            transition: var(--transition);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.12);
         }
 
         .cert-card h4 {
             color: var(--primary);
             margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .cert-card h4 i {
+            color: var(--accent);
+            margin-right: 8px;
         }
 
         .cert-issuer {
             color: #666;
             font-size: 0.9rem;
             margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .cert-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 10px;
+            font-size: 0.88rem;
+        }
+
+        .cert-list li {
+            padding: 4px 0;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .cert-list li::before {
+            content: '•';
+            color: var(--accent);
+            position: absolute;
+            left: 5px;
+            font-weight: bold;
         }
 
         /* Indian Quantum Lab Section */
@@ -408,9 +600,9 @@
         .iqb-stats {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 60px;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
         .stat-item {
@@ -418,13 +610,54 @@
         }
 
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
             color: var(--accent);
+            font-family: 'Montserrat', sans-serif;
         }
 
         .stat-label {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
+            margin-top: 5px;
+        }
+
+        /* References Section */
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .reference-card {
+            background-color: white;
+            padding: 22px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 3px solid var(--accent);
+        }
+
+        .reference-card h4 {
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .reference-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .reference-card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.88rem;
+        }
+
+        .reference-card a:hover {
+            text-decoration: underline;
         }
 
         /* Contact Section */
@@ -452,7 +685,7 @@
 
         .contact-detail i {
             color: var(--accent);
-            margin-right: 10px;
+            margin-right: 12px;
             font-size: 1.2rem;
             width: 25px;
         }
@@ -478,14 +711,36 @@
 
         input, textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border: 1px solid #ddd;
             border-radius: 5px;
             font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0,128,128,0.1);
         }
 
         textarea {
             min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-status {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .form-status.success {
+            background-color: #d4edda;
+            color: #155724;
+            display: block;
         }
 
         /* Footer */
@@ -493,13 +748,27 @@
             background-color: var(--primary);
             color: var(--text-light);
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 0;
             margin-top: 50px;
         }
 
         footer a {
             color: var(--accent);
             text-decoration: none;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .footer-social {
+            margin: 15px 0;
+        }
+
+        .footer-social a {
+            font-size: 1.3rem;
         }
 
         /* Responsive */
@@ -509,6 +778,14 @@
             }
 
             .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 0.95rem;
+            }
+
+            section h2 {
                 font-size: 2rem;
             }
 
@@ -524,16 +801,20 @@
                 width: 100%;
                 padding-left: 70px;
                 padding-right: 25px;
-                left: 0;
+                left: 0 !important;
             }
 
-            .timeline-item:nth-child(even) {
-                left: 0;
+            .timeline-item::before {
+                left: 23px !important;
+                right: auto !important;
             }
 
             .iqb-stats {
-                flex-direction: column;
-                gap: 20px;
+                gap: 30px;
+            }
+
+            .stat-number {
+                font-size: 2.2rem;
             }
         }
     </style>
@@ -560,10 +841,17 @@
 
     <section id="home" class="hero">
         <div class="container">
-            <img src="WhatsApp Image 2025-10-05 at 21.45.30_be2fb8de.jpg" alt="Neelesh Kumar">
-            <h1>Aspiring Researcher in Quantum Computing & AI</h1>
-            <p>Quantum Computing and AI enthusiast with a strong academic foundation in Mathematics and Physics. Passionate about research, teaching, and developing hybrid quantum-classical models to simplify complex concepts and contribute to academic environments.</p>
-            <a href="#projects" class="btn">View My Work</a>
+            <img src="profile.jpg" alt="Neelesh Kumar" class="profile-pic" onerror="this.style.display='none'">
+            <p class="tagline">Quantum Machine Learning · Hybrid Quantum-Classical Algorithms · NISQ-Era Applications</p>
+            <h1>Neelesh Kumar</h1>
+            <p>Quantum Machine Learning Researcher specializing in variational quantum circuits and hybrid quantum-classical architectures for real-world applications in financial prediction and medical diagnosis. Published author, invited peer reviewer, and Founder of Indian Quantum Lab.</p>
+            <div class="hero-links">
+                <a href="mailto:neeleshyadv603@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/neeleshyadav603" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/neelesh-yadav-a0064b19b/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://orcid.org/0009-0001-6862-5221" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
+                <a href="https://youtube.com/@indianquantumlab" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
         </div>
     </section>
 
@@ -572,9 +860,32 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Hello! I'm <strong>Neelesh Kumar</strong>, an aspiring researcher in Quantum Computing & AI currently pursuing my <strong>Master of Computer Applications (MCA)</strong> at Amity University, Haryana. I hold a <strong>B.Sc. in Mathematics & Physics</strong> from CSJM Kanpur University, which has provided me with a robust analytical and theoretical foundation.</p>
-                    <p>My research interests lie at the intersection of quantum computing and artificial intelligence, with a focus on developing <strong>hybrid quantum-classical models</strong>, quantum algorithms, and educational tools to democratize quantum knowledge. I am passionate about simplifying complex concepts and contributing to academic environments through research and teaching.</p>
-                    <p>When I'm not exploring quantum circuits or building ML models, I enjoy creating educational content, mentoring learners through my platform <strong>Indian Quantum Lab</strong>, and staying updated with cutting-edge developments in quantum technology and AI.</p>
+                    <p>Hello! I'm <strong>Neelesh Kumar</strong>, a Quantum Machine Learning Researcher currently pursuing my <strong>Master of Computer Applications (MCA)</strong> at Amity University Haryana (CGPA: 8.15/10). I hold a <strong>B.Sc. in Mathematics & Physics</strong> from CSJM University, Kanpur, which has provided me with a robust foundation in linear algebra, quantum mechanics, and probability theory.</p>
+                    <p>My research focuses on <strong>variational quantum circuits and hybrid quantum-classical architectures</strong> for real-world applications in financial prediction and medical diagnosis. My master's thesis, supervised by Dr. Rashmi Gupta and guided by Dr. Harbinder Singh, explores hybrid quantum-classical models for financial market prediction in the NISQ era.</p>
+                    <p>I am the <strong>Founder of Indian Quantum Lab</strong>, an educational platform delivering structured quantum computing curriculum to 50+ learners through hands-on Qiskit training and bootcamps. I also serve as an <strong>invited peer reviewer for Frontiers in Artificial Intelligence (2026)</strong>.</p>
+                </div>
+                <div class="about-highlights">
+                    <h3>Research Highlights</h3>
+                    <div class="highlight-item">
+                        <i class="fas fa-book"></i>
+                        <span><strong>3 Publications</strong> — 1 peer-reviewed journal article + 2 Springer-accepted contributions</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-user-check"></i>
+                        <span><strong>Invited Peer Reviewer</strong> — Frontiers in Artificial Intelligence (2026)</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span><strong>Founder, Indian Quantum Lab</strong> — Mentoring 50+ learners in quantum computing</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-atom"></i>
+                        <span><strong>MCA Thesis</strong> — Hybrid Quantum-Classical Models for Financial Market Prediction</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-id-card"></i>
+                        <span><strong>ORCID:</strong> 0009-0001-6862-5221</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -582,63 +893,62 @@
 
     <section id="skills" style="background-color: #f8f9fa;">
         <div class="container">
-            <h2>My Skills</h2>
+            <h2>Technical Skills</h2>
+            <p class="section-subtitle">A comprehensive toolkit spanning quantum computing, machine learning, mathematics, and modern development infrastructure.</p>
             <div class="skills-grid">
                 <div class="skill-card">
                     <h3><i class="fas fa-atom"></i> Quantum Computing</h3>
                     <ul class="skill-list">
-                        <li>Qiskit, Quantum Gates & Circuits</li>
-                        <li>Quantum Algorithms</li>
-                        <li>Basic Quantum Machine Learning</li>
-                        <li>Quantum Error Correction (Basics)</li>
-                        <li>Hybrid Quantum-Classical Models</li>
+                        <li>Qiskit (Runtime, Aer, Ignis)</li>
+                        <li>Variational Algorithms (VQE)</li>
+                        <li>QSVM, QNN, QGAN</li>
+                        <li>Quantum Feature Maps (ZZ, Pauli, Angle)</li>
+                        <li>Quantum Kernels & Noise Modelling</li>
+                        <li>Hybrid Quantum-Classical Architectures</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-tools"></i> Quantum Frameworks</h3>
+                    <ul class="skill-list">
+                        <li>Qiskit</li>
+                        <li>PennyLane</li>
+                        <li>Cirq</li>
                     </ul>
                 </div>
                 <div class="skill-card">
                     <h3><i class="fas fa-brain"></i> Machine Learning</h3>
                     <ul class="skill-list">
+                        <li>Python, scikit-learn</li>
                         <li>Supervised Learning</li>
-                        <li>Regression & Classification</li>
-                        <li>Scikit-learn</li>
-                        <li>Data Preprocessing & EDA</li>
-                        <li>Model Evaluation & Optimization</li>
+                        <li>Feature Engineering</li>
+                        <li>Sentiment Analysis (NLP)</li>
+                        <li>Cross-Validation</li>
+                        <li>Quantum Neural Networks (QNN)</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3><i class="fas fa-chart-bar"></i> Data Visualization</h3>
+                    <h3><i class="fas fa-square-root-alt"></i> Mathematics</h3>
                     <ul class="skill-list">
-                        <li>Pandas, NumPy</li>
-                        <li>Matplotlib</li>
-                        <li>Power BI</li>
-                        <li>Interactive Dashboards</li>
+                        <li>Linear Algebra</li>
+                        <li>Probability Theory</li>
+                        <li>Quantum Mechanics</li>
+                        <li>Optimization</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    <h3><i class="fas fa-laptop-code"></i> Tools & Infrastructure</h3>
                     <ul class="skill-list">
-                        <li>Python (Advanced)</li>
-                        <li>SQL</li>
-                        <li>Basic Java</li>
-                        <li>API Integration</li>
-                        <li>Backend Development</li>
+                        <li>Pandas, NumPy, Matplotlib</li>
+                        <li>GitHub, Jupyter, LaTeX</li>
+                        <li>SQL, Power BI</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3><i class="fas fa-flask"></i> Research & Analysis</h3>
+                    <h3><i class="fas fa-language"></i> Languages</h3>
                     <ul class="skill-list">
-                        <li>Literature Review</li>
-                        <li>Research Methodology</li>
-                        <li>Technical Writing</li>
-                        <li>Academic Presentation</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3><i class="fas fa-chalkboard-teacher"></i> Education & Outreach</h3>
-                    <ul class="skill-list">
-                        <li>Content Creation</li>
-                        <li>Mentoring & Teaching</li>
-                        <li>Curriculum Design</li>
-                        <li>Public Speaking</li>
+                        <li>Hindi (Native)</li>
+                        <li>English (Professional — Academic Writing & Research Communication)</li>
+                        <li>French (Basic)</li>
                     </ul>
                 </div>
             </div>
@@ -647,49 +957,75 @@
 
     <section id="projects">
         <div class="container">
-            <h2>Featured Projects</h2>
+            <h2>Research Projects</h2>
+            <p class="section-subtitle">Applied research at the intersection of quantum computing and real-world problems.</p>
             <div class="projects-grid">
-                
-                <a href="https://github.com/neeleshyadav603" target="_blank" rel="noopener noreferrer" class="project-card">
-                    <div class="project-img"><i class="fas fa-microchip"></i><br>Virtual Quantum Lab</div>
-                    <div class="project-content">
-                        <h3>Virtual Quantum Lab (VQL)</h3>
-                        <p>Developed an interactive platform for simulating quantum circuits with qubits, quantum gates, and Bloch sphere visualization. Designed for educational understanding of quantum concepts.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Qiskit</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Quantum Circuits</span>
-                            <span class="tech-tag">Education</span>
-                        </div>
-                        <p><small><em>Future scope: Research publication planned</em></small></p>
-                    </div>
-                </a>
 
-                <a href="https://github.com/neeleshyadav603/Quantum-Finance-Predictor" target="_blank" rel="noopener noreferrer" class="project-card">
-                    <div class="project-img"><i class="fas fa-chart-line"></i><br>Quantum Finance Predictor</div>
+                <a href="https://github.com/neeleshyadav603/quantum-finance-predictor" target="_blank" rel="noopener noreferrer" class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Quantum Finance Predictor</span>
+                    </div>
                     <div class="project-content">
                         <h3>Quantum Finance Predictor</h3>
-                        <p>Developed a hybrid quantum-classical framework for financial prediction, integrating quantum computing concepts with classical ML and sentiment analysis for improved predictions.</p>
+                        <p class="project-period"><i class="fas fa-calendar"></i> 2025 – 2026 · Master's Thesis, Amity University Haryana</p>
+                        <ul>
+                            <li>Hybrid quantum-classical framework using VQC, ZZFeatureMap, and NLP-based sentiment analysis for financial market prediction.</li>
+                            <li>Evaluated on six technology stocks, achieving <strong>73.2% average VQC classification accuracy</strong>.</li>
+                            <li>Benchmarked against LSTM and Random Forest using Accuracy, Precision, Recall, F1-score, and MSE.</li>
+                            <li>Accepted at <strong>ICDAM 2026, Springer LNNS</strong>.</li>
+                        </ul>
                         <div class="project-tech">
                             <span class="tech-tag">Qiskit</span>
                             <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Hybrid Models</span>
-                            <span class="tech-tag">Sentiment Analysis</span>
+                            <span class="tech-tag">scikit-learn</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">VQC</span>
                         </div>
-                        <p><small><em>Research paper accepted at ICDAM 2026</em></small></p>
                     </div>
                 </a>
 
-                <a href="https://github.com/neeleshyadav603" target="_blank" rel="noopener noreferrer" class="project-card">
-                    <div class="project-img"><i class="fas fa-microphone-alt"></i><br>NAVI Assistant</div>
+                <a href="https://virtualquantumlab.app" target="_blank" rel="noopener noreferrer" class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-microchip"></i>
+                        <span>Virtual Quantum Lab</span>
+                    </div>
                     <div class="project-content">
-                        <h3>NAVI - Voice-Powered AI Assistant</h3>
-                        <p>Built a speech-enabled assistant using Python & NLP with voice input and response system capabilities for hands-free interaction and task automation.</p>
+                        <h3>Virtual Quantum Lab (VQL)</h3>
+                        <p class="project-period"><i class="fas fa-calendar"></i> 2024 – Present · Indian Quantum Lab</p>
+                        <ul>
+                            <li>Interactive web platform for real-time quantum circuit simulation with multi-qubit entanglement and gate composition.</li>
+                            <li>Step-by-step state evolution, circuit export, and Bloch sphere rendering for pedagogical use.</li>
+                            <li>Live at <strong>virtualquantumlab.app</strong>.</li>
+                        </ul>
                         <div class="project-tech">
+                            <span class="tech-tag">Qiskit</span>
                             <span class="tech-tag">Python</span>
-                            <span class="tech-tag">NLP</span>
-                            <span class="tech-tag">Speech Recognition</span>
-                            <span class="tech-tag">AI Assistant</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Bloch Sphere</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/neeleshyadav603/quantum-breast-cancer-classification" target="_blank" rel="noopener noreferrer" class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>Quantum Breast Cancer Diagnosis</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Quantum-Classical Hybrid Model for Breast Cancer Diagnosis</h3>
+                        <p class="project-period"><i class="fas fa-calendar"></i> 2026 – Present · Independent Research</p>
+                        <ul>
+                            <li>Quantum SVM (QSVM) with ZZFeatureMap, PauliFeatureMap, Angle Encoding, and custom adaptive feature maps on WDBC dataset.</li>
+                            <li>PCA for dimensionality reduction (2–6 qubits), compared against classical SVM.</li>
+                            <li>Benchmarking across simulator, noisy simulation (depolarizing & amplitude damping), and trapped-ion hardware.</li>
+                            <li>Metrics: Accuracy, F1-score, ROC-AUC, paired t-tests (95% CI).</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-tag">Qiskit</span>
+                            <span class="tech-tag">scikit-learn</span>
+                            <span class="tech-tag">QSVM</span>
+                            <span class="tech-tag">WDBC</span>
                         </div>
                     </div>
                 </a>
@@ -700,35 +1036,35 @@
 
     <section id="publications" style="background-color: #f8f9fa;">
         <div class="container">
-            <h2>Research & Publications</h2>
+            <h2>Publications & Peer Review</h2>
+            <p class="section-subtitle">Published author with 3 works including a peer-reviewed journal article and 2 Springer-accepted contributions.</p>
             <div class="publications-list">
-                
+
                 <div class="publication-item">
-                    <span class="publication-status status-published">Published</span>
+                    <span class="publication-status status-published">Published · Journal Article</span>
                     <h4>Quantum AI vs Classical AI: A Comparative Analysis</h4>
-                    <p class="publication-meta"><i class="fas fa-book"></i> IJIREM, Vol. 12, Issue 6, December 2025</p>
-                    <p>A comprehensive comparative study analyzing the capabilities, limitations, and potential applications of quantum AI versus classical AI approaches.</p>
+                    <p class="publication-authors">Kumar, N. & Gupta, R. (2025)</p>
+                    <p class="publication-meta"><i class="fas fa-book"></i> International Journal of Innovative Research in Engineering and Management (IJIREM), Vol. 12, Issue 6</p>
                 </div>
 
                 <div class="publication-item">
-                    <span class="publication-status status-accepted">Accepted - Conference</span>
+                    <span class="publication-status status-accepted">Accepted · Conference Paper · Springer LNNS</span>
                     <h4>Evaluating Hybrid Quantum-Classical Model for Financial Market Prediction in the NISQ Era</h4>
-                    <p class="publication-meta"><i class="fas fa-conference"></i> 7th International Conference on Data Analytics & Management (ICDAM-2026) | Paper ID: 660</p>
-                    <p>Research on leveraging hybrid quantum-classical architectures for enhanced financial forecasting in current noisy quantum hardware environments.</p>
+                    <p class="publication-authors">Kumar, N., Sharma, S., & Gupta, R. (2026)</p>
+                    <p class="publication-meta"><i class="fas fa-conference"></i> 7th International Conference on Data Analytics & Management (ICDAM-2026), Springer Lecture Notes in Networks and Systems</p>
                 </div>
 
                 <div class="publication-item">
-                    <span class="publication-status status-accepted">Accepted - Conference</span>
-                    <h4>QuantumPredict: Hybrid Framework for Financial Time Series Prediction with Sentiment Analysis</h4>
-                    <p class="publication-meta"><i class="fas fa-conference"></i> International Conference on Quantum Computing in Financial Technology (ICQCFT-26)</p>
-                    <p>Novel framework combining quantum machine learning with sentiment analysis for improved financial time series forecasting accuracy.</p>
+                    <span class="publication-status status-accepted">Accepted · Book Chapter · Springer</span>
+                    <h4>AI-Assisted Quantum Threat Detection and Risk Modeling for Post-Quantum Cybersecurity</h4>
+                    <p class="publication-authors">Kumar, N. & Sharma, S. (2026)</p>
+                    <p class="publication-meta"><i class="fas fa-book"></i> In <em>Quantum Computing for Cybersecurity: AI, Blockchain Integration and Current Technical Frameworks</em>, Springer</p>
                 </div>
 
-                <div class="publication-item">
-                    <span class="publication-status status-accepted">Accepted - Book Chapter</span>
-                    <h4>Quantum Computing for Cyber Security: AI & Blockchain Integration and Current Technical Frameworks</h4>
-                    <p class="publication-meta"><i class="fas fa-book"></i> Upcoming Book Publication</p>
-                    <p>Exploring the convergence of quantum computing, artificial intelligence, and blockchain technologies for next-generation cybersecurity solutions.</p>
+                <div class="publication-item" style="border-left-color: #6f42c1;">
+                    <span class="publication-status status-reviewer">Invited Peer Reviewer · 2026</span>
+                    <h4>Frontiers in Artificial Intelligence</h4>
+                    <p class="publication-meta"><i class="fas fa-user-check"></i> Evaluated manuscript on <em>Quantum-Enhanced Generative AI</em> for novelty, methodological rigor, and contribution to the existing literature.</p>
                 </div>
 
             </div>
@@ -739,16 +1075,29 @@
         <div class="container">
             <h2>Education & Experience</h2>
             <div class="timeline">
-                
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Master of Computer Applications (MCA)</h3>
+                        <p class="timeline-date">2024 – 2026</p>
+                        <p class="timeline-location"><i class="fas fa-graduation-cap"></i> Amity University Haryana, Gurugram</p>
+                        <ul>
+                            <li><strong>CGPA: 8.15 / 10</strong></li>
+                            <li><strong>Thesis:</strong> Hybrid Quantum-Classical Models for Financial Market Prediction in the NISQ Era</li>
+                            <li><strong>Advisor:</strong> Dr. Rashmi Gupta, Assistant Professor, Amity Institute of Information Technology</li>
+                            <li><strong>Research Guidance:</strong> Dr. Harbinder Singh, Professor & Head, Dept. of Quantum Technologies</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Python Developer Intern</h3>
-                        <p class="timeline-date">Feb 2026 – Present</p>
+                        <p class="timeline-date">February – April 2026</p>
                         <p class="timeline-location"><i class="fas fa-building"></i> VN Digital Services (Hybrid)</p>
                         <ul>
-                            <li>Developing backend systems using Python</li>
-                            <li>Working with APIs, databases, and application logic</li>
-                            <li>Debugging and optimizing applications for performance</li>
+                            <li>Engineered scalable RESTful backend APIs and database integrations in Python for production systems.</li>
+                            <li>Optimized application performance through profiling, code reviews, and agile collaboration using Git.</li>
                         </ul>
                     </div>
                 </div>
@@ -756,22 +1105,12 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Data Analytics Intern</h3>
-                        <p class="timeline-date">May 2025 – July 2025</p>
+                        <p class="timeline-date">May – July 2025</p>
                         <p class="timeline-location"><i class="fas fa-laptop-code"></i> HackTech (Remote)</p>
                         <ul>
-                            <li>Built data pipelines (EDA, cleaning, modeling) using Python & SQL</li>
-                            <li>Created interactive dashboards for reporting and business insights</li>
-                            <li>Improved data-driven decision-making processes</li>
+                            <li>Developed end-to-end data pipelines for EDA, cleaning, and predictive modeling using Python and SQL.</li>
+                            <li>Created Power BI dashboards delivering actionable insights; applied statistical techniques to real-world datasets.</li>
                         </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Master of Computer Applications (MCA)</h3>
-                        <p class="timeline-date">Oct 2024 – 2026 (Expected)</p>
-                        <p class="timeline-location"><i class="fas fa-graduation-cap"></i> Amity University, Haryana</p>
-                        <p>Specializing in Artificial Intelligence, Data Science, and Quantum Computing applications.</p>
                     </div>
                 </div>
 
@@ -779,8 +1118,12 @@
                     <div class="timeline-content">
                         <h3>B.Sc. in Mathematics & Physics</h3>
                         <p class="timeline-date">2019 – 2022</p>
-                        <p class="timeline-location"><i class="fas fa-university"></i> CSJM Kanpur University</p>
-                        <p>Graduated with strong foundation in mathematical modeling, statistical analysis, and physical sciences essential for quantum computing research.</p>
+                        <p class="timeline-location"><i class="fas fa-university"></i> Chhatrapati Shahu Ji Maharaj University, Kanpur</p>
+                        <ul>
+                            <li><strong>Result:</strong> First Division (65.00%)</li>
+                            <li><strong>First & Second Year Average:</strong> 72.67% (433/600 + 439/600)</li>
+                            <li><strong>Core:</strong> Linear Algebra, Calculus, Classical & Quantum Mechanics, Probability Theory, Differential Equations</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -793,22 +1136,25 @@
             <h2>Certifications</h2>
             <div class="cert-grid">
                 <div class="cert-card">
+                    <h4><i class="fas fa-certificate"></i> IBM Quantum Developer Certifications</h4>
+                    <p class="cert-issuer">IBM Quantum</p>
+                    <ul class="cert-list">
+                        <li>Basics of Quantum Information</li>
+                        <li>Fundamentals of Quantum Algorithms & QML</li>
+                        <li>Quantum Circuits & Qiskit Foundations</li>
+                    </ul>
+                </div>
+                <div class="cert-card">
+                    <h4><i class="fas fa-certificate"></i> Introduction to Quantum Computing, Quantum Algorithms & Qiskit</h4>
+                    <p class="cert-issuer">NPTEL / IIT Madras</p>
+                </div>
+                <div class="cert-card">
                     <h4><i class="fas fa-certificate"></i> Fundamentals of Quantum Computing (LFQ101)</h4>
                     <p class="cert-issuer">The Linux Foundation</p>
                 </div>
                 <div class="cert-card">
-                    <h4><i class="fas fa-certificate"></i> Introduction to Quantum Computing and Quantum Algorithms</h4>
-                    <p class="cert-issuer">SWAYAM (NPTEL) - 4-week course</p>
-                </div>
-                <div class="cert-card">
-                    <h4><i class="fas fa-certificate"></i> IBM Quantum Certifications</h4>
-                    <p class="cert-issuer">IBM Quantum</p>
-                    <ul class="skill-list" style="margin-top: 10px; font-size: 0.9rem;">
-                        <li>• Basics of Quantum Information</li>
-                        <li>• Fundamentals of Quantum Algorithms & QML</li>
-                        <li>• Quantum Circuits and Qiskit Foundations</li>
-                        <li>• Quantum Computation</li>
-                    </ul>
+                    <h4><i class="fas fa-certificate"></i> Faculty Development Program on Principles & Applications of Quantum Computing</h4>
+                    <p class="cert-issuer">C-DAC & IIT Mandi</p>
                 </div>
             </div>
         </div>
@@ -816,25 +1162,25 @@
 
     <section id="iqb" class="iqb-section">
         <div class="container">
-            <h2>Founder & Educator - Indian Quantum Lab</h2>
-            <p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.1rem;">
-                Built and manage an educational platform focused on Quantum Computing & AI, creating accessible learning resources for aspiring researchers and enthusiasts worldwide.
+            <h2>Founder & Lead Educator — Indian Quantum Lab</h2>
+            <p style="max-width: 750px; margin: 0 auto 30px; font-size: 1.1rem;">
+                Founded and lead an educational platform delivering a structured quantum computing curriculum on quantum gates, Qiskit programming, variational algorithms, and hybrid models through bootcamps and live sessions — making NISQ-era concepts accessible through hands-on projects and step-by-step tutorials.
             </p>
             <div class="iqb-stats">
                 <div class="stat-item">
-                    <div class="stat-number">3000+</div>
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Learners Reached</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">28+</div>
                     <div class="stat-label">Learners Mentored</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">YouTube</div>
-                    <div class="stat-label">Educational Content</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">Online</div>
-                    <div class="stat-label">Structured Courses</div>
+                    <div class="stat-number">2025</div>
+                    <div class="stat-label">Founded</div>
                 </div>
             </div>
-            <div style="margin-top: 30px;">
+            <div style="margin-top: 40px;">
                 <a href="https://youtube.com/@indianquantumlab" target="_blank" class="btn" style="background-color: white; color: var(--primary);">
                     <i class="fab fa-youtube"></i> Visit Indian Quantum Lab
                 </a>
@@ -842,7 +1188,36 @@
         </div>
     </section>
 
-    <section id="contact">
+    <section id="references">
+        <div class="container">
+            <h2>References & Research Collaborators</h2>
+            <div class="references-grid">
+                <div class="reference-card">
+                    <h4>Dr. Harbinder Singh</h4>
+                    <p><strong>Professor & Head</strong></p>
+                    <p>Department of Quantum Technologies</p>
+                    <p>Amity University Haryana, Gurugram</p>
+                    <a href="mailto:harbinder.ece@gmail.com"><i class="fas fa-envelope"></i> harbinder.ece@gmail.com</a>
+                </div>
+                <div class="reference-card">
+                    <h4>Dr. Rashmi Gupta</h4>
+                    <p><strong>Assistant Professor</strong></p>
+                    <p>Amity School of Engineering and Technology</p>
+                    <p>Amity University Haryana</p>
+                    <a href="mailto:goyal.rashmi18@gmail.com"><i class="fas fa-envelope"></i> goyal.rashmi18@gmail.com</a>
+                </div>
+                <div class="reference-card">
+                    <h4>Dr. Shivani Sharma</h4>
+                    <p><strong>Assistant Professor</strong></p>
+                    <p>Amity School of Engineering and Technology</p>
+                    <p>Amity University Haryana</p>
+                    <a href="mailto:shivanijoon333@gmail.com"><i class="fas fa-envelope"></i> shivanijoon333@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="background-color: #f8f9fa;">
         <div class="container">
             <h2>Get In Touch</h2>
             <div class="contact-container">
@@ -850,7 +1225,7 @@
                     <h3>Contact Information</h3>
                     <div class="contact-detail">
                         <i class="fas fa-envelope"></i>
-                        <span><a href="mailto:neeleshyadav603@gmail.com">neeleshyadav603@gmail.com</a></span>
+                        <span><a href="mailto:neeleshyadv603@gmail.com">neeleshyadv603@gmail.com</a></span>
                     </div>
                     <div class="contact-detail">
                         <i class="fas fa-phone"></i>
@@ -858,11 +1233,11 @@
                     </div>
                     <div class="contact-detail">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Gurugram, Haryana, India</span>
+                        <span>Gurugram, India</span>
                     </div>
                     <div class="contact-detail">
-                        <i class="fas fa-globe"></i>
-                        <span><a href="https://neeleshyadav603.github.io/my-portfolio/" target="_blank">Portfolio Website</a></span>
+                        <i class="fas fa-id-card"></i>
+                        <span><a href="https://orcid.org/0009-0001-6862-5221" target="_blank">ORCID: 0009-0001-6862-5221</a></span>
                     </div>
                     <div class="contact-detail">
                         <i class="fab fa-linkedin"></i>
@@ -872,13 +1247,13 @@
                         <i class="fab fa-github"></i>
                         <span><a href="https://github.com/neeleshyadav603" target="_blank">GitHub Profile</a></span>
                     </div>
-                    <div style="margin-top: 25px;">
-                        <h4 style="color: var(--primary); margin-bottom: 10px;">Languages</h4>
-                        <p><i class="fas fa-language"></i> Hindi (Native) | English (Fluent) | French (Basic)</p>
+                    <div class="contact-detail">
+                        <i class="fab fa-youtube"></i>
+                        <span><a href="https://youtube.com/@indianquantumlab" target="_blank">Indian Quantum Lab (YouTube)</a></span>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form action="https://formspree.io/f/your-form-id" method="POST">
+                    <form id="contactForm">
                         <div class="form-group">
                             <input type="text" name="name" placeholder="Your Name" required>
                         </div>
@@ -892,6 +1267,7 @@
                             <textarea name="message" placeholder="Your Message" required></textarea>
                         </div>
                         <button type="submit" class="btn">Send Message</button>
+                        <div class="form-status" id="formStatus"></div>
                     </form>
                 </div>
             </div>
@@ -901,11 +1277,14 @@
     <footer>
         <div class="container">
             <p>&copy; 2026 Neelesh Kumar. All Rights Reserved.</p>
-            <p style="margin-top: 10px; font-size: 0.9rem;">
-                <a href="https://github.com/neeleshyadav603" target="_blank"><i class="fab fa-github"></i> GitHub</a> | 
-                <a href="https://www.linkedin.com/in/neelesh-yadav-a0064b19b/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> | 
-                <a href="https://neeleshyadav603.github.io/my-portfolio/" target="_blank"><i class="fas fa-globe"></i> Portfolio</a>
-            </p>
+            <div class="footer-social">
+                <a href="mailto:neeleshyadv603@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/neeleshyadav603" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/neelesh-yadav-a0064b19b/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://orcid.org/0009-0001-6862-5221" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
+                <a href="https://youtube.com/@indianquantumlab" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Quantum Machine Learning Researcher · Gurugram, India</p>
         </div>
     </footer>
 
@@ -913,8 +1292,10 @@
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth',
@@ -924,15 +1305,51 @@
             });
         });
 
-        // Form submission handler (replace with your Formspree endpoint)
-        document.querySelector('form').addEventListener('submit', function(e) {
-            // Uncomment below and replace 'your-form-id' with your actual Formspree form ID
-            // This is just a placeholder - the form will work once you set up Formspree
-            // e.preventDefault();
-            // alert('Thank you for your message! I will get back to you soon.');
-            // this.reset();
+        // Contact form handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const status = document.getElementById('formStatus');
+            const formData = new FormData(this);
+            const name = formData.get('name');
+
+            // Build mailto fallback
+            const email = formData.get('email');
+            const subject = encodeURIComponent(formData.get('subject') || 'Portfolio Contact');
+            const message = encodeURIComponent(formData.get('message'));
+            const mailtoLink = `mailto:neeleshyadv603@gmail.com?subject=${subject}&body=${message}%0A%0AFrom: ${name} (${email})`;
+
+            status.className = 'form-status success';
+            status.innerHTML = `Thank you, <strong>${name}</strong>! Opening your email client to send the message to Neelesh...`;
+            
+            setTimeout(() => {
+                window.location.href = mailtoLink;
+            }, 800);
+
+            this.reset();
+            setTimeout(() => {
+                status.className = 'form-status';
+                status.innerHTML = '';
+            }, 5000);
+        });
+
+        // Animate stat numbers on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.skill-card, .project-card, .publication-item, .cert-card, .reference-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
         });
     </script>
 
 </body>
 </html>
+
